@@ -91,6 +91,7 @@ Not preferred when the number of features is more than the observations
 
 
 ## Result and Analysis
+![WeatherPred_EDA](https://github.com/user-attachments/assets/22a8bd19-e245-4584-b411-0d85d4e52d87)
 
 
 | Training Model            | Accuracy                                                              |
@@ -99,6 +100,7 @@ Not preferred when the number of features is more than the observations
 | Logistic Regression | 93.2 |
 | SVM | 86.4 |
 | XG Boost | 100|
+
 
 The Random forest classifier model was selected for the final prediction
 
@@ -114,5 +116,16 @@ Settings needed:
 2. To connect Streamlit with mlflow,  run this in terminal--> mlflow server --host 0.0.0.0 --port 5000
 3. Then run this in terminal to see webapp in browser (Streamlit on server: Opens automatically) --> streamlit run 3_dashboard.py
 
+Details:
+- A PoC was made to setup MLOps for this project
+- Code in file '2_TrainModel.py' gets data from the Git repo and uses for training and validating a model. Here, for reference, logistic regression method is used. However, this can be replaced with any other method. Trained model then gets registed into MLFlow registry. Registered model is then called for deployement
+- Deployed model is then called over local server and is connected to Webapp developed using Streamlit. The code in '3_dashboard.py' calls model for prediction by using input data given by user for rainfall prediction.
+
+Models in MLOps and Output Results/Dashboard:
+![image](https://github.com/user-attachments/assets/0cee56cb-1459-4f12-8f25-80344aebf4f9)
+![image](https://github.com/user-attachments/assets/1566e071-1255-41eb-8465-ac2c42885445)
+![RainPred_Yes](https://github.com/user-attachments/assets/12e3be82-1e37-4a10-9347-e0ec86aac430)
+![RainPred_No](https://github.com/user-attachments/assets/bfa20b79-3703-466f-8f91-ce357c58a672)
+
 ## Help/contact:
-For any questions, contact: Sagar Kamble, sbkamble816@gmail.com
+For any questions/feedback, please contact: Sagar Kamble, sbkamble816@gmail.com
